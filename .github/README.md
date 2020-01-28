@@ -4,26 +4,26 @@ This is a collection of scripts developed for use in administrating GitHub Class
 
 ## AddFile.py
 
-Python 3 command line utility to add a file to the **master** branch of every repository in an assignment and push those repositories.
+Python 3 command line utility to add/updates multiple files to the **master** branch of every repository in an assignment and push those repositories.
 
 ### Pre-state
 
 There must exist a directory containing every repository for a given assignment and _only_ those repositories.
 
-There must exist a file on user's local machine that is to be added to each repository.
 
 ### Usage
 
 This utility requires 2 command line arguments:
 1. The _absolute_ path to the directory containing each of your repositories.
-2. The _absolute_ path to the file that needs to be added.
+2. The _absolute_ path to the each file that needs to be added.
 
-Example: `python3 addFile.py /Users/Username/Documents/COMP167/Program2-StudentRepos /Users/Username/Downloads/UpdatedAssignment.md`
+Example: `python3 addFile.py /Users/Username/Documents/COMP167/Program2-StudentRepos /Users/Username/Downloads/UpdatedFile1.md /Users/Username/Downloads/UpdatedFile2.md /Users/Username/Downloads/UpdatedFile3.md`
 
+Note that the source dir for repos DOES NOT end with "/"
 
 ## CloneAssignment.py
 
-Python 3 command line utility to clone student repositories created using [GitHub Classroom](https://classroom.github.com).
+Python 4 command line utility to clone student repositories created using [GitHub Classroom](https://classroom.github.com).
 
 ### Pre-state
 
@@ -33,12 +33,16 @@ The user must have a plain text file (.txt or .csv) with the GitHub usernames of
 
 ### Usage
 
-This utility requires 3 command line arguments:
+This utility requires 4 command line arguments:
 1. The name of the GitHub organization that hosts the classroom, as it appears in a GitHub URL. (i.e. My Code Classroom would be entered as my-code-classroom).
 2. The assignment name as it appears in a GitHub URL. (Coding Assignment 1 would be coding-assignment-1).
 3. The local path to the .csv or .txt file that holds GitHub usernames.
+4. The path for the output directory to put the assignment repositories in it.
 
-Example: `python3 CloneAssignment.py my-class-organization assignment-1-variables ~/Documents/classroster.txt`
+Example: `python3 CloneAssignment.py my-class-organization assignment1 ~/Documents/classroster.txt /path/to/outdir/`
+
+Note that the our directry ends with "/"
+
 
 ## MossSetup.py
 
